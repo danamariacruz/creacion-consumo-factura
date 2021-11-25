@@ -30,7 +30,7 @@ const FacturaPost = async(req, res = response) => {
 
   const ListadoFactura = async(req, res = response) => {  
 
-    const facturas = await Factura.find().limit(10);
+    const facturas = await Factura.find().sort({_id:-1}).limit(10);
 
 
   res.json({
