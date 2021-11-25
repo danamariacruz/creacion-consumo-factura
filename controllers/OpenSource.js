@@ -8,12 +8,12 @@ const FacturaPost = async(req, res = response) => {
 
     const factura = req.body;
 
-    const factura2 = new Factura(factura);
+    const facturas = new Factura(factura);
 
-    await factura2.save();
+    await facturas.save();
 
   res.json({
-    factura2
+    facturas
   })
   }
 
@@ -21,10 +21,10 @@ const FacturaPost = async(req, res = response) => {
 
     const {id} = req.params;  
 
-    const Foto = await Factura.findById(id);
+    const facturas = await Factura.findById(id);
 
   res.json({
-      Foto,
+      facturas,
   })
   }
 
