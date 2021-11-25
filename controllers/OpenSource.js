@@ -21,14 +21,25 @@ const FacturaPost = async(req, res = response) => {
 
     const {id} = req.params;  
 
-    const {Foto} = await Factura.findById(id);
+    const Foto = await Factura.findById(id);
 
   res.json({
       Foto,
   })
   }
 
+  const ListadoFactura = async(req, res = response) => {  
+
+    const facturas = await Factura.find().limit(10);
+
+
+  res.json({
+    facturas,
+  })
+  }
+
   module.exports = {
     FacturaPost,
-    FacturaGet
+    FacturaGet,
+    ListadoFactura
 }

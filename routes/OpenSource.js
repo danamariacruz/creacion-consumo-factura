@@ -1,11 +1,13 @@
 const {Router} = require('express');
-const { FacturaPost,FacturaGet } = require('../controllers/OpenSource');
+const { FacturaPost,FacturaGet, ListadoFactura } = require('../controllers/OpenSource');
 
 
 
 const router = Router();
 
-router.get('/:id', FacturaGet);
+router.get('/guardar/:id', FacturaGet);
+
+router.get('/facturas/', ListadoFactura);
 
 router.post('/', FacturaPost);
 

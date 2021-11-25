@@ -1,6 +1,7 @@
 const {Schema, model} = require('mongoose');
 
 const FacturaShema = Schema({
+   
     condicion: {
         type: String,
         required: [true, 'La condicion es requerida']
