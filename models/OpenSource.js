@@ -32,7 +32,8 @@ const FacturaShema = Schema({
 
 FacturaShema.methods.toJSON = function() {
     const {__v,_id, ...factura} = this.toObject();
-    factura.uid = _id;
+    factura.id = _id;
+    factura.name = "prueba"
 
     return factura;
 }
